@@ -7,7 +7,6 @@ end
 
 
 gem 'rails', '~> 5.0.1'
-gem 'sqlite3'
 gem 'puma', '~> 3.0'
 gem 'active_model_serializers'
 gem 'devise_token_auth'
