@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  host: localhost
+  username: postgres
+  password: postgres
+  database: theloop_development
+
+test:
+  <<: *default
+  host: localhost
+  username: postgres
+  password: postgres
+  database: theloop_test
+
+production:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
