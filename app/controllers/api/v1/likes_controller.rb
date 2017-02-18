@@ -3,7 +3,11 @@ class Api::V1::LikesController < ApplicationController
 
   def create
     @like = current_user.likes.new(like_params)
-    render json: @like, status: 201
+    if @like.save
+      render json: @like, status: 201
+    else
+      render json: {errors: @like.errors.full_messages}, status: 422
+    end
   end
 
   def destroy
