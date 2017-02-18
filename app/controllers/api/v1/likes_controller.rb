@@ -15,6 +15,6 @@ class Api::V1::LikesController < ApplicationController
   private
 
   def like_params
-    params.slice(:post_id)
+    params.permit(:post_id)
   end
 end

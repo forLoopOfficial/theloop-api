@@ -34,6 +34,6 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def post_params
-    params.slice(:body)
+    params.permit(:body)
   end
 end
